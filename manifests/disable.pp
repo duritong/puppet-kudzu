@@ -6,6 +6,9 @@
 
 # disable kudzu
 class kudzu::disable inherits kudzu::base {
+    Package['kudzu']{
+        ensure => absent,
+    }
     Service[kudzu]{
         ensure => stopped,
         enable => false,
